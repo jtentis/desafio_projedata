@@ -21,7 +21,6 @@ public class Funcionario extends Pessoa {
     private BigDecimal salario;
     private String funcao;
 
-    // Adicionando um construtor personalizado
     public Funcionario(String nome, LocalDate dataNascimento, BigDecimal salario, String funcao) {
         this.setNome(nome);
         this.setDataNascimento(dataNascimento);

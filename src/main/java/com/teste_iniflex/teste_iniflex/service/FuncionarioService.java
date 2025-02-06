@@ -1,5 +1,6 @@
 package com.teste_iniflex.teste_iniflex.service;
 
+import com.teste_iniflex.teste_iniflex.dto.FuncionarioMaisVelhoDTO;
 import com.teste_iniflex.teste_iniflex.entity.Funcionario;
 import com.teste_iniflex.teste_iniflex.repository.FuncionarioRepository;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 public class FuncionarioService {
 
     private final FuncionarioRepository repository;
+    private static final BigDecimal SALARIO_MINIMO = new BigDecimal("1212.00");
 
     public FuncionarioService(FuncionarioRepository repository) {
         this.repository = repository;
@@ -54,10 +56,18 @@ public class FuncionarioService {
                 .toList();
     }
 
-    public Funcionario obterFuncionarioMaisVelho() {
+    public FuncionarioMaisVelhoDTO obterFuncionarioMaisVelho() {
+        Optional<Funcionario> funcionarioMaisVelho = repository.findAll().stream()
+                .min(Comparator.comparing(Funcionario::getDataNascimento));
+
+        return funcionarioMaisVelho.map(FuncionarioMaisVelhoDTO::new).orElse(null);
+    }
+
+    public List<Funcionario> listarAniversariantesOutubroDezembro() {
         return repository.findAll().stream()
-                .min(Comparator.comparing(f -> f.getDataNascimento()))
-                .orElse(null);
+                .filter(f -> f.getDataNascimento().getMonth() == Month.OCTOBER ||
+                        f.getDataNascimento().getMonth() == Month.DECEMBER)
+                .collect(Collectors.toList());
     }
 
     public List<Funcionario> ordenarPorNome() {
@@ -72,11 +82,11 @@ public class FuncionarioService {
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
-    public Map<String, BigDecimal> calcularSalariosMinimos(BigDecimal salarioMinimo) {
+    public Map<String, BigDecimal> calcularSalariosMinimos() {
         return repository.findAll().stream()
                 .collect(Collectors.toMap(
                         Funcionario::getNome,
-                        f -> f.getSalario().divide(salarioMinimo, 2, BigDecimal.ROUND_HALF_UP)
+                        f -> f.getSalario().divide(SALARIO_MINIMO, 2, BigDecimal.ROUND_HALF_UP)
                 ));
     }
 }
