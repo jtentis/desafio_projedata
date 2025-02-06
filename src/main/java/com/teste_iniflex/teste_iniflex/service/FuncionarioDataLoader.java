@@ -20,7 +20,7 @@ public class FuncionarioDataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        if (repository.count() == 0) { // Insere apenas se o banco estiver vazio
+        if (repository.count() == 0) { // só cria se o banco estiver vazio
             List<Funcionario> funcionarios = List.of(
                     new Funcionario("Maria", LocalDate.of(2000, 10, 18), new BigDecimal("2009.44"), "Operador"),
                     new Funcionario("João", LocalDate.of(1990, 5, 12), new BigDecimal("2284.38"), "Operador"),
