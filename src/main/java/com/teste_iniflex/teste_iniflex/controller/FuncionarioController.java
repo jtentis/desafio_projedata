@@ -41,19 +41,19 @@ public class FuncionarioController {
         service.removerPorNome(nome);
     }
 
-    @PutMapping("/aumentarSalario")
+    @PutMapping("/aumentar-salario")
     @Operation(summary = "Aumentar salário dos funcionários")
     public void aumentarSalario(@RequestParam double percentual) {
         service.aumentarSalario(percentual);
     }
 
-    @GetMapping("/agruparPorFuncao")
+    @GetMapping("/agrupar-por-funcao")
     @Operation(summary = "Agrupar funcionários por função")
     public Map<String, List<Funcionario>> agruparPorFuncao() {
         return service.agruparPorFuncao();
     }
 
-    @GetMapping("/maisVelho")
+    @GetMapping("/mais-velho")
     @Operation(summary = "Listar funcionário mais velho")
     public FuncionarioMaisVelhoDTO obterFuncionarioMaisVelho() {
         return service.obterFuncionarioMaisVelho();
@@ -71,13 +71,13 @@ public class FuncionarioController {
         return service.ordenarPorNome();
     }
 
-    @GetMapping("/totalSalarios")
+    @GetMapping("/total-salarios")
     @Operation(summary = "Listar a soma de todos os salários")
     public BigDecimal calcularTotalSalarios() {
         return service.calcularTotalSalarios();
     }
 
-    @GetMapping("/quantidadeSalariosMinimos")
+    @GetMapping("/quantidade-salarios-minimos")
     @Operation(summary = "Listar quantos salários minimos cada funcionário possue")
     public Map<String, BigDecimal> calcularSalariosMinimos() {
         return service.calcularSalariosMinimos();
