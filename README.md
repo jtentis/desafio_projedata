@@ -1,6 +1,6 @@
 # Sistema de funcionários
 
-Este projeto é uma aplicação web que gerencia e exibe informações sobre funcionários. Ele permite realizar operações como agrupar funcionários por função, calcular salários, ordenar por nome e outros. A aplicação utiliza **Spring Boot** no back-end e **Tailwind CSS** no front-end. Desenvolvido para o teste técnico da projedata.
+Este projeto é uma API com interface básica para gerenciamento de informações sobre funcionários. Ele permite realizar operações como agrupar funcionários por função, calcular salários, ordenar por nome e outros. A aplicação utiliza **Spring Boot** para construção da API e HTML + TailwindCSS para a construção da interaface.
 
 ## Tecnologias usadas
 
