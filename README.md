@@ -2,8 +2,6 @@
 
 Este projeto é uma aplicação web que gerencia e exibe informações sobre funcionários. Ele permite realizar operações como agrupar funcionários por função, calcular salários, ordenar por nome e outros. A aplicação utiliza **Spring Boot** no back-end e **Tailwind CSS** no front-end. Desenvolvido para o teste técnico da projedata.
 
----
-
 ## Tecnologias usadas
 
 - **Back-end**:
@@ -31,7 +29,7 @@ Este projeto é uma aplicação web que gerencia e exibe informações sobre fun
 
 ## Como rodar localmente
 
-### 2. Configuração do Back-End
+### 1. Configuração do Back-End
 
 - **Banco de Dados**: O projeto usa **PostgreSQL**. Para configurar o banco de dados, crie um banco com as credenciais necessárias.
 
@@ -55,7 +53,7 @@ Este projeto é uma aplicação web que gerencia e exibe informações sobre fun
   spring.jpa.hibernate.ddl-auto=update
   ```
 
-### 3. Rodando o Back-End
+### 2. Rodando o Back-End
 
 - Execute o **Spring Boot** com o comando:
 
@@ -65,33 +63,37 @@ Este projeto é uma aplicação web que gerencia e exibe informações sobre fun
 
 - O servidor estará rodando na URL `http://localhost:8080`.
 
-### 4. Rodando o Front-End
+### 3. Rodando o Front-End
 
 - Navegue até a pasta `src/main/resources/static` e abra o arquivo **index.html** no navegador. O front-end irá consumir a API do back-end.
 
 ## Como usar a aplicação
 
-1. **Acesse o Swagger**:
-    - A documentação da API está disponível através do Swagger em `http://localhost:8080/swagger-ui.html`.
+### 1.  Acesse o Swagger:
+
+-   A documentação da API está disponível através do Swagger em `http://localhost:8080/swagger-ui.html`.
 
    ![Swagger Screenshot](/src/main/resources/assets/swagger.png)
 
-2. **Acessando a Página de Funcionários**:
-    - A página de funcionários é acessada ao abrir o arquivo **index.html**.
-    - A tabela será preenchida dinamicamente com os dados dos funcionários após interações com os botões.
+### 2.  Acessando a Página de Funcionários:
+- A página de funcionários é acessada ao abrir o arquivo **index.html**.
+- A tabela será preenchida dinamicamente com os dados dos funcionários após interações com os botões.
 
    ![Funcionários Table Screenshot](/src/main/resources/assets/diagrama.png)
 
-3. **Banco de Dados**:
-    - O banco de dados armazena as informações dos funcionários. O esquema contém a tabela `funcionarios` com os campos: `id`, `nome`, `funcao`, `salario`, `dataNascimento`.
+### 3.  Banco de Dados:
+- O banco de dados armazena as informações dos funcionários. O esquema contém a tabela `funcionarios` com os campos: `id`, `nome`, `funcao`, `salario`, `dataNascimento`.
 
    ![Funcionários Table Screenshot](/src/main/resources/assets/tabela.png)
 
 ---
 
 ## Endpoints
+### Auth
 - **POST /auth/register**: Registrar novo usuário.
 - **POST /auth/login**: Autenticar usuário.
+
+### Funcionários
 - **POST /funcionarios**: Cria um novo funcionário.
 - **GET /funcionarios**: Lista todos os funcionários.
 - **DELETE /funcionarios**: Deleta um funcionário.
