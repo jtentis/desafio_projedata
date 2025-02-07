@@ -1,10 +1,10 @@
-# Sistema de Funcionários
+# Sistema de funcionários
 
 Este projeto é uma aplicação web que gerencia e exibe informações sobre funcionários. Ele permite realizar operações como agrupar funcionários por função, calcular salários, ordenar por nome e outros. A aplicação utiliza **Spring Boot** no back-end e **Tailwind CSS** no front-end. Desenvolvido para o teste técnico da projedata.
 
 ---
 
-## Tecnologias Usadas
+## Tecnologias usadas
 
 - **Back-end**:
     - Spring Boot
@@ -19,20 +19,17 @@ Este projeto é uma aplicação web que gerencia e exibe informações sobre fun
     - Tailwind CSS
     - JavaScript (Fetch API para comunicação com o back-end)
 
----
-
 ## Funcionalidades
 
-- **Agrupar Funcionários por Função**: Agrupa os funcionários em categorias com base em sua função.
-- **Listar Funcionário Mais Velho**: Exibe o funcionário mais velho da lista.
-- **Aniversariantes de Outubro e Dezembro**: Exibe os funcionários que fazem aniversário nesses meses.
-- **Ordenação Alfabética**: Ordena os funcionários por nome.
-- **Cálculo do Total de Salários**: Exibe a soma total de todos os salários.
-- **Cálculo de Salários Mínimos**: Exibe quantos salários mínimos cada funcionário ganha.
+- **Agrupar funcionários por função**: Agrupa os funcionários em categorias com base em sua função.
+- **Listar funcionário mais velho**: Exibe o funcionário mais velho da lista.
+- **Aniversariantes de outubro e dezembro**: Exibe os funcionários que fazem aniversário nesses meses.
+- **Ordenação alfabética**: Ordena os funcionários por nome.
+- **Aumento percentual de salário**: Aumenta o salário dos funcionários percentualmente.
+- **Cálculo do total de salários**: Exibe a soma total de todos os salários.
+- **Cálculo de salários mínimos**: Exibe quantos salários mínimos cada funcionário ganha.
 
----
-
-## Como Rodar Localmente
+## Como rodar localmente
 
 ### 2. Configuração do Back-End
 
@@ -72,9 +69,7 @@ Este projeto é uma aplicação web que gerencia e exibe informações sobre fun
 
 - Navegue até a pasta `src/main/resources/static` e abra o arquivo **index.html** no navegador. O front-end irá consumir a API do back-end.
 
----
-
-## Como Usar a Aplicação
+## Como usar a aplicação
 
 1. **Acesse o Swagger**:
     - A documentação da API está disponível através do Swagger em `http://localhost:8080/swagger-ui.html`.
@@ -108,8 +103,6 @@ Este projeto é uma aplicação web que gerencia e exibe informações sobre fun
 - **GET /funcionarios/total-salarios**: Retorna o total de salários dos funcionários.
 - **GET /funcionarios/quantidade-salarios-minimos**: Retorna quantos salários mínimos cada funcionário possui.
 
----
-
 ## Uso do Docker
 
 O projeto utiliza **Docker** para facilitar o gerenciamento do banco de dados PostgreSQL. O **docker-compose** foi configurado para levantar o banco de dados sem necessidade de instalação manual.
@@ -118,17 +111,15 @@ O projeto utiliza **Docker** para facilitar o gerenciamento do banco de dados Po
 
 1. Certifique-se de que você tem **Docker** e **Docker Compose** instalados.
 2. Na raiz do projeto, execute o comando:
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
 3. O PostgreSQL estará disponível na porta `5432`.
 
 Para parar os containers:
 ```bash
 docker-compose down
 ```
-
----
 
 ## Decisões de Implementação
 
